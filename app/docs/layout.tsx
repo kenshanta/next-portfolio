@@ -1,4 +1,3 @@
-'use client'
 import { PageAnimation } from '@/components/animator'
 
 const DocsLayout = ({ children }: any) => {

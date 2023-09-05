@@ -1,4 +1,3 @@
-'use client'
 import NewTodoForm from '@/components/NewTodoForm'
 import CoolAnimation from './animation/page'
 import { PageAnimation } from '@/components/animator'
