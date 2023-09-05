@@ -1,22 +1,62 @@
-import Image from 'next/image'
-import someIcon from './logo.svg'
-import Link from 'next/link'
+'use client'
 
-export default function Home() {
+import {
+  PageAnimation,
+  BoxAnimation,
+  ProgressIndicator,
+} from '@/components/animator'
+import { LoremIpsum } from '@/components/loremIpsum'
+
+function Home() {
+  //TODO: refactor to dynamic list
+  const boxProps = {
+    color: 'pink',
+    duration: 2,
+    rotation: [0, 0, 90, 180, 0],
+  }
+  const boxProps1 = {
+    color: 'orange',
+    duration: 1,
+    rotation: [0, 90, 90, 180, 0],
+  }
+  const boxProps3 = {
+    color: 'whitesmoke',
+    duration: 1,
+    rotation: [0, 40, 190, 280, 0],
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <Image priority src={someIcon} alt="logo" />
-        <Link href="/">Home</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/about">About</Link>
-        <Link href="/blog/changeMe">Blog</Link>
-      </div>
-      <text className="mt-5">
-        This is the intro for my portfolio, should not be that long but somehow
-        it should be descriptive. Change the following body whenever the
-        skeleton of the site gets established
-      </text>
-    </main>
+    <div className="flex align-center justify-center ">
+      <ProgressIndicator />
+      <PageAnimation>
+        <div>
+          <div className="flex justify-start space-between align-center d-column">
+            <BoxAnimation props={boxProps3} />
+          </div>
+          <div className="w-25 flex justify-center align-center d-row">
+            <BoxAnimation props={boxProps} />
+          </div>
+          <div className="  mb-5 flex justify-end align-center d-column">
+            <BoxAnimation props={boxProps1} />
+          </div>
+        </div>
+        <div>
+          <LoremIpsum />
+        </div>
+        <div>
+          <div className="flex justify-start space-between align-center d-column">
+            <BoxAnimation props={boxProps1} />
+          </div>
+          <div className="w-25 flex justify-center align-center d-row">
+            <BoxAnimation props={boxProps3} />
+          </div>
+          <div className="  mb-5 flex justify-end align-center d-column">
+            <BoxAnimation props={boxProps} />
+          </div>
+        </div>
+      </PageAnimation>
+    </div>
   )
 }
+
+export default Home
