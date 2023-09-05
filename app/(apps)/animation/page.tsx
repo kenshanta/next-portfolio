@@ -10,11 +10,6 @@ const CoolAnimation: React.FC = () => {
     height: '15vh',
   }
 
-  const headingStyle: React.CSSProperties = {
-    fontSize: '2rem',
-    marginBottom: '1rem',
-  }
-
   const boxStyle: React.CSSProperties = {
     width: '150px',
     height: '150px',

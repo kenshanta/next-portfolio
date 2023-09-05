@@ -8,7 +8,7 @@ import {
 import { LoremIpsum } from '@/components/loremIpsum'
 
 function Home() {
-  //TODO: refactor to dynamic list
+  //TODO: refactor into dynamic list
   const boxProps = {
     color: 'pink',
     duration: 2,
