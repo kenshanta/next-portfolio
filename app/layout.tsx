@@ -11,9 +11,9 @@ export const metadata = {
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/docs', label: 'Docs' },
-    { href: '/todos', label: 'App' },
+    { href: '/', label: 'Home', color: 'whitesmoke' },
+    { href: '/docs', label: 'Docs', color: 'pink' },
+    { href: '/todos', label: 'App', color: 'orange' },
   ]
 
   return (
@@ -22,12 +22,14 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         <header className="mb-5">
           <nav>
             <ul className="flex items-center justify-center">
-              {links.map(({ href, label }) => (
+              {links.map(({ href, label, color }) => (
                 <li
                   key={href}
-                  className="px-4 mx-1 text-2xl border border-black"
+                  className={`px-4 mx-1 text-2xl border border-black`}
                 >
-                  <Link href={href}>{label}</Link>
+                  <Link style={{ color: color }} href={href}>
+                    {label}
+                  </Link>
                 </li>
               ))}
             </ul>

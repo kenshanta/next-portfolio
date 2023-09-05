@@ -27,7 +27,6 @@ function Home() {
 
   return (
     <div className="flex align-center justify-center ">
-      <ProgressIndicator />
       <PageAnimation>
         <div>
           <div className="flex justify-start space-between align-center d-column">
@@ -55,6 +54,7 @@ function Home() {
           </div>
         </div>
       </PageAnimation>
+      <ProgressIndicator />
     </div>
   )
 }
