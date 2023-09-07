@@ -7,7 +7,6 @@ type TodoListType = {
 }
 
 const TodoList = ({ todos }: any = []) => {
-  // console.log(todos, '--------------')
   return (
     <div className="mt-5">
       {todos.map((todo: TodoListType) => (

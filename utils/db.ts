@@ -1,17 +1,19 @@
-import { PrismaClient } from '@prisma/client'
+import firebase_app from '../firebase/config'
+import { getFirestore, doc, setDoc } from 'firebase/firestore'
 
-let prisma: PrismaClient
+const db = getFirestore(firebase_app)
 
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient()
-} else {
-  let globalWithPrisma = global as typeof globalThis & {
-    prisma: PrismaClient
+export default async function addData(colllection: any, id: any, data: any) {
+  let result = null
+  let error = null
+
+  try {
+    result = await setDoc(doc(db, colllection, id), data, {
+      merge: true,
+    })
+  } catch (e) {
+    error = e
   }
-  if (!globalWithPrisma.prisma) {
-    globalWithPrisma.prisma = new PrismaClient()
-  }
-  prisma = globalWithPrisma.prisma
+
+  return { result, error }
 }
-
-export default prisma
