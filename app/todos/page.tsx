@@ -1,16 +1,10 @@
+'use client'
 import TodoList from '@/components/TodoList'
-import db from '@/utils/db'
 
-const getData = async () => {
-  const todos: any = []
-  return todos
-}
-
-const TodosPage = async () => {
-  const todos = await getData()
+const TodosPage = () => {
   return (
     <div>
-      <TodoList todos={todos} />
+      <TodoList todos={[]} />
     </div>
   )
 }

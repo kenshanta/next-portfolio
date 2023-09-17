@@ -1,10 +1,9 @@
 'use client'
 
-import {
-  PageAnimation,
-  BoxAnimation,
-  ProgressIndicator,
-} from '@/components/animator'
+import 'tailwindcss/tailwind.css'
+import PageAnimation from '@/components/pageAnimation'
+import BoxAnimation from '@/components/boxAnimation'
+import ProgressIndicator from '@/components/progressIndicator'
 import { LoremIpsum } from '@/components/loremIpsum'
 
 function Home() {

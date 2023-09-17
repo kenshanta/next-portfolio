@@ -1,14 +1,8 @@
-import content from '@/utils/content.json'
+'use client'
 
 type some = {
   'api/todos/get': string
   'api/todos/create': string
-}
-
-export const generateStaticParams = () => {
-  return Object.keys(content).map((slug) => ({
-    slug: slug.split('/'),
-  }))
 }
 
 const getData = (slug: any) => {

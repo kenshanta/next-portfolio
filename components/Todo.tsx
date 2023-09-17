@@ -1,5 +1,5 @@
 'use client'
-import { completeTodo } from '@/utils/actions'
+import completeTodo from '@/utils/actions/update'
 import { useTransition } from 'react'
 
 type TodoType = {

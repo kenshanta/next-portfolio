@@ -1,3 +1,4 @@
+'use client'
 import Todo from './Todo'
 
 type TodoListType = {

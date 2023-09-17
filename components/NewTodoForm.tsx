@@ -1,4 +1,5 @@
-import { newTodo } from '@/utils/actions'
+'use client'
+import newTodo from '@/utils/actions/create'
 
 const NewTodoForm = () => {
   return (

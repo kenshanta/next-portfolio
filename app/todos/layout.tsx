@@ -1,6 +1,5 @@
 import NewTodoForm from '@/components/NewTodoForm'
-import CoolAnimation from '../animation/page'
-import { PageAnimation } from '@/components/animator'
+import PageAnimation from '@/components/pageAnimation'
 
 const DashboardLayout = ({ children }: any) => {
   return (

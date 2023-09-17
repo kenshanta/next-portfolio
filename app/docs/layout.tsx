@@ -1,4 +1,4 @@
-import { PageAnimation } from '@/components/animator'
+import PageAnimation from '@/components/pageAnimation'
 
 const DocsLayout = ({ children }: any) => {
   return (
