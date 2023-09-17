@@ -5,7 +5,7 @@ const DashboardLayout = ({ children }: any) => {
   return (
     <div>
       <PageAnimation>
-        <h1>Animation</h1>
+        <h1>Motion Framer Animation:</h1>
         <CoolAnimation />
       </PageAnimation>
     </div>
