@@ -10,8 +10,8 @@ type TodoListType = {
 const TodoList = ({ todos }: any = []) => {
   return (
     <div className="mt-5">
-      {todos.map((todo: TodoListType) => (
-        <Todo key={todo.id} todo={todo} />
+      {todos.map((todo: TodoListType, i: number) => (
+        <Todo key={i} todo={todo} />
       ))}
     </div>
   )

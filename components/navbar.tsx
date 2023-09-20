@@ -10,6 +10,7 @@ const Navbar = () => {
     { href: '/docs', label: 'Docs', color: 'pink' },
     { href: '/todos', label: 'App', color: 'orange' },
   ]
+
   return (
     <nav>
       <ul className="flex items-center justify-center">

@@ -10,8 +10,8 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 }
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+export const app = initializeApp(firebaseConfig)
+export const db = getFirestore(app)
 
 // Initialize Firebase
 let firebase_app =

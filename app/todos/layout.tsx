@@ -5,8 +5,8 @@ const DashboardLayout = ({ children }: any) => {
   return (
     <div>
       <PageAnimation>
-        <div>
-          <h1>Todos</h1>
+        <div className="mb-5">
+          <h1 className="text-3xl">Todos</h1>
         </div>
         <div>
           <NewTodoForm />

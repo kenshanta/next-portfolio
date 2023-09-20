@@ -6,9 +6,10 @@ const BoxAnimation = ({ props }: any) => {
   return (
     <motion.div
       style={{
-        height: 50,
-        width: 50,
+        height: 45,
+        width: 45,
         background: props.color,
+        borderRadius: 4,
       }}
       animate={{
         scale: [1, 2, 2, 1, 1],

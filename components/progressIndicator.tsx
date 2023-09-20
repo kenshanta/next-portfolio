@@ -2,7 +2,7 @@
 
 import { motion, useSpring, useScroll } from 'framer-motion'
 
-const ProgressIndicator = () => {
+const UsageIndicator = () => {
   const { scrollYProgress } = useScroll()
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -19,4 +19,4 @@ const ProgressIndicator = () => {
     />
   )
 }
-export default ProgressIndicator
+export default UsageIndicator
