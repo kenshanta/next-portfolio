@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 
+// API request for AI
 // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 //   e.preventDefault()
 //   try {
