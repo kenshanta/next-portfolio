@@ -24,7 +24,7 @@ const TextInput = () => {
   }
 
   return (
-    <form className="mt-3">
+    <form>
       <input
         type="text"
         placeholder="how old is the admin?"
