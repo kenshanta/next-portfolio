@@ -69,7 +69,7 @@ const Home = () => {
           <ResponseBody response={greetingMessage + user.firstName + ' :)'} />
           <div className="h-96 flex-row-reverse justify-center">
             <div className="text-grey">
-              <p className="text-underline text-xl"> UNDER CONSTRUCTION</p>
+              <p className="underline-offset-2 text-xl"> UNDER CONSTRUCTION</p>
               this is where the answer gets generated, line after line. replace
               me when able
             </div>
