@@ -15,10 +15,10 @@ function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} p-10 h-screen w-screen`}>
+        <body className={`${inter.className} p-6 h-screen w-screen`}>
           <header className="mb-5">
+            {/* <UserButton afterSignOutUrl="/" /> */}
             <Navbar />
-            <UserButton afterSignOutUrl="/" />
           </header>
           {children}
         </body>

@@ -66,12 +66,17 @@ const Home = () => {
           </div>
         </div>
         <div className="flex-col justify-end align-bottom">
-          <ResponseBody response={greetingMessage + user.firstName + ' :)'} />
-          <div className="h-96 flex-row-reverse justify-center">
+          <ResponseBody response={greetingMessage + user.firstName + ' 😉'} />
+          <div className="h-96 flex-row-reverse justify-center mt-5">
             <div className="text-grey">
-              <p className="underline-offset-2 text-xl"> UNDER CONSTRUCTION</p>
+              <p className="underline underline-offset-2 text-xl opacity-50 mb-2">
+                UNDER CONSTRUCTION
+              </p>
               this is where the answer gets generated, line after line. replace
-              me when able
+              me when able Your name and email address were configured
+              automatically based on your username and hostname. Please check
+              that they are accurate. You can suppress this message by setting
+              them explicitly:
             </div>
           </div>
         </div>
