@@ -1,6 +1,6 @@
 'use client'
 
-export const LoremIpsum = ({ response }: any) => {
+export const ResponseBody = ({ response }: any) => {
   return (
     <div>
       <p className="text-xl">{response}</p>

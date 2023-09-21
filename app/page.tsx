@@ -4,7 +4,7 @@ import 'tailwindcss/tailwind.css'
 import PageAnimation from '@/components/pageAnimation'
 import BoxAnimation from '@/components/boxAnimation'
 import UsageIndicator from '@/components/progressIndicator'
-import { LoremIpsum } from '@/components/loremIpsum'
+import { ResponseBody } from '@/components/loremIpsum'
 import TextInput from '@/components/textInput'
 import { useUser } from '@clerk/nextjs'
 import { getTimes } from 'suncalc'
@@ -66,7 +66,7 @@ const Home = () => {
           </div>
         </div>
         <div className="flex-col justify-end align-bottom">
-          <LoremIpsum response={greetingMessage + user.firstName + ' :)'} />
+          <ResponseBody response={greetingMessage + user.firstName + ' :)'} />
           <div className="h-96 flex-row-reverse justify-center">
             <div>
               this is where the answer gets generated, ,,, line after line.
