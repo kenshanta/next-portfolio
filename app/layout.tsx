@@ -17,7 +17,6 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <html lang="en">
         <body className={`${inter.className} p-6 h-screen w-screen`}>
           <header className="mb-5">
-            {/* <UserButton afterSignOutUrl="/" /> */}
             <Navbar />
           </header>
           {children}

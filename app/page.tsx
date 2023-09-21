@@ -7,6 +7,7 @@ import UsageIndicator from '@/components/progressIndicator'
 import { ResponseBody } from '@/components/responseBody'
 import TextInput from '@/components/textInput'
 import { useUser } from '@clerk/nextjs'
+import Link from 'next/link'
 import { getTimes } from 'suncalc'
 import { useEffect, useState } from 'react'
 
@@ -85,8 +86,19 @@ const Home = () => {
       <UsageIndicator />
     </div>
   ) : (
-    <div>
-      <h1> Building. . . </h1>
+    <div className="flex-col mt-10">
+      <div>
+        <h1 className="text-2xl">
+          You need to <a className="underline decoration-pink-400">Sign-in</a>{' '}
+          or <a className="underline decoration-orange-400">Sign-up</a> in order
+          to unlock all the features
+        </h1>
+      </div>
+      <div className="flex justify-center align-center mt-7">
+        <Link className="border-2 border-orange-400 p-2" href="/sign-in">
+          <b>Validate Me</b>
+        </Link>
+      </div>
     </div>
   )
 }
