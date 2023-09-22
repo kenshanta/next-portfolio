@@ -1,8 +1,7 @@
 import { authMiddleware } from '@clerk/nextjs'
 
 export default authMiddleware({
-  //TODO: undo comment after deployment
-  // publicRoutes: ['/'],
+  publicRoutes: ['/'],
 })
 
 export const config = {
