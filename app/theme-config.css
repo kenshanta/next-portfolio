@@ -1,0 +1,21 @@
+.radix-themes {
+  background-color: #f2f2f2;
+  --default-color: 'Inter', #d96d39;
+  --default-secondary-color: gainsboro;
+  --default-font-size: 18px;
+}
+
+#__next {
+  padding: 1rem;
+  margin: 0;
+  height: 100vh;
+}
+
+.response-body {
+  background-color: white;
+  color: var(--default-secondary-color);
+}
+
+body {
+  margin: 0;
+}

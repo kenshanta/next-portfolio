@@ -2,14 +2,14 @@
 
 import { motion } from 'framer-motion'
 
-const BoxAnimation = ({ props }: any) => {
+const BoxAnimation = ({ props, children }: any) => {
   return (
     <motion.div
       style={{
-        height: 45,
-        width: 45,
-        background: props.color,
-        borderRadius: 4,
+        height: 'auto',
+        width: 'auto',
+        display: 'flex',
+        justifyContent: 'center',
       }}
       animate={{
         scale: [1, 2, 2, 1, 1],
@@ -21,9 +21,11 @@ const BoxAnimation = ({ props }: any) => {
         ease: 'easeInOut',
         times: [0, 0.2, 0.5, 0.8, 1],
         repeat: 1,
-        repeatDelay: 2,
+        repeatDelay: 6,
       }}
-    />
+    >
+      {children}
+    </motion.div>
   )
 }
 export default BoxAnimation
