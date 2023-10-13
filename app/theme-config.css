@@ -6,8 +6,7 @@
 }
 
 ._parent {
-  height: 99vh;
-  padding-bottom: 0;
+  height: 100vh;
   color: var(--default-secondary-color);
 }
 
@@ -15,9 +14,16 @@
   background-color: white;
   color: var(--default-secondary-color);
 }
+
 .jobTitleHeading {
   color: var(--default-color);
 }
+
+.rt-TextFieldRoot {
+  outline: none;
+  box-shadow: none;
+}
+
 html,
 body {
   height: 100vh;

@@ -12,7 +12,6 @@ const memory = new BufferMemory()
 export const analyze = async (prompt: string) => {
   let chat: any = []
 
-  // console.log(res1, 'response 1')
   // const res2 = await chain.call({ input: "What's my name?" })
   await model.call(prompt)
   try {

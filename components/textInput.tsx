@@ -1,10 +1,11 @@
 'use client'
 import React from 'react'
 import { Button, TextField } from '@radix-ui/themes'
-import { PaperPlaneIcon } from '@radix-ui/react-icons'
+import PaperPlaneIcon from '../public/paper-plane-icon.svg'
 import BoxAnimation from './boxAnimation'
 import { useAppContext } from '../hooks/useAppContext'
 import { analyze } from '@/utils/ai'
+import Image from 'next/image'
 
 const animateProps = {
   scale: [1, 2, 2, 1, 1],
@@ -25,13 +26,21 @@ const TextInput = () => {
   const handleInputChange = (value: string) => {
     setUserInput(value)
   }
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     setIsEnabled(true)
-    const response = await analyze(userInput)
-    setAiResponse(response)
+    // if (userInput.length > 0) {
+    //   const response = await analyze(userInput)
+    //   setAiResponse(response)
+
+    setUserInput('')
+    // }
   }
   return (
-    <TextField.Root>
+    <TextField.Root
+      style={{
+        margin: '.7rem',
+      }}
+    >
       <TextField.Slot pl="2"></TextField.Slot>
       <TextField.Input
         aria-label="yea"
@@ -41,7 +50,7 @@ const TextInput = () => {
         variant="soft"
         placeholder="How old is Sarkis?"
         type="text"
-        style={{ height: '3rem' }}
+        style={{ height: '3rem', maxWidth: '50rem' }}
         onChange={(e) => handleInputChange(e.target.value)}
       />
       <TextField.Slot pr="2" style={{ top: 0 }}>
@@ -50,13 +59,14 @@ const TextInput = () => {
           variant="ghost"
           size={'2'}
           onClick={() => handleSubmit()}
+          disabled={userInput.length === 0}
         >
           <BoxAnimation
             isEnabled={isEnabled}
             transitionProps={transitionProps}
             animateProps={animateProps}
           >
-            <PaperPlaneIcon />
+            <Image alt="paperPlane" src={PaperPlaneIcon} />
           </BoxAnimation>
         </Button>
       </TextField.Slot>

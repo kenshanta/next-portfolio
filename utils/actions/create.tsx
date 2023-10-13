@@ -8,9 +8,7 @@ const newTodo = async (data: any) => {
     content: data.get('todo'),
     completed: false,
   })
-    .then((docRef) => {
-      // console.log('Document has been added successfully')
-    })
+    .then((docRef) => {})
     .catch((error) => {
       console.log(error)
     })

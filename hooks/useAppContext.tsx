@@ -1,5 +1,6 @@
 'use client' // Because we're inside a server component
 import React, { createContext, useState, useContext } from 'react'
+import { useUser } from '@clerk/nextjs'
 
 interface IStateContext {
   userInput: string
@@ -8,6 +9,8 @@ interface IStateContext {
   setAiResponse: React.Dispatch<React.SetStateAction<IAIResponseContext[]>>
   signedInUserData: any
   setSignedInUserData: any
+  isMobile: boolean
+  setIsMobile: any
 }
 
 interface IAIResponseContext {
@@ -21,19 +24,24 @@ const AppContext = createContext<IStateContext>({
   setAiResponse: () => {},
   signedInUserData: {},
   setSignedInUserData: () => {},
+  isMobile: true,
+  setIsMobile: () => {},
 })
 
 export const AppProvider = ({ children }: any) => {
   const [userInput, setUserInput] = useState('')
+  const { isLoaded, isSignedIn, user } = useUser()
+  const [signedInUserData, setSignedInUserData] = useState<any>(user)
+  const [isMobile, setIsMobile] = useState(
+    window.matchMedia('(max-width: 650px)').matches
+  )
   const [aiResponse, setAiResponse] = useState<IAIResponseContext[]>([
     {
-      content:
-        'Hey ${user} how how how how how how how how how how howh ohw how how howh owhowh  how can i help you today?',
+      content: `Hey! Im currently under construction, all the services will be provided shortly before end of 2023 :)`,
     },
   ])
 
-  const [signedInUserData, setSignedInUserData] = useState<any>({})
-
+  console.log(user, 'dataaaa')
   // Define any functions or values you want to provide
   const value = {
     userInput,
@@ -42,6 +50,8 @@ export const AppProvider = ({ children }: any) => {
     setAiResponse,
     setSignedInUserData,
     signedInUserData,
+    setIsMobile,
+    isMobile,
   }
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }

@@ -1,13 +1,6 @@
 'use client'
 import React from 'react'
 import { Flex, Heading, Text, Link } from '@radix-ui/themes'
-import {
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  InstagramLogoIcon,
-  StackIcon,
-} from '@radix-ui/react-icons'
-
 import Image from 'next/image'
 
 import GithubIcon from '../public/github-icon.svg'
@@ -42,7 +35,9 @@ const SideBarShortcuts = () => {
           </Link>
         </Flex>
         <Flex direction={'column'} gap={'1'}>
-          <Text>Chat With sarkAI</Text>
+          <Text style={{ textDecoration: 'underline', color: '#d96d39' }}>
+            Chat With sarkAI
+          </Text>
           <Text>Projects</Text>
           <Text>Work 1</Text>
           <Text>About</Text>

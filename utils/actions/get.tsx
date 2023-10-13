@@ -9,7 +9,7 @@ const getTodos = async () => {
     docId = doc.id
     return { id: docId, ...doc.data() }
   })
-  // console.log(todoList, '--------citylist---------')
+
   return todoList
 }
 export default getTodos
