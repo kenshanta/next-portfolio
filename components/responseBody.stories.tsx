@@ -1,5 +1,5 @@
 import { StoryFn } from '@storybook/react'
-import ResponseBody from './responseBody'
+import { ResponseBody } from './responseBody'
 
 export default {
   title: 'Chat Box',
