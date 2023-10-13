@@ -1,14 +1,9 @@
-import './theme-config.css'
-import '@radix-ui/themes/styles.css'
-import { Inter } from 'next/font/google'
-import ReduxProvider from '@/stores/providers/reduxProviders'
+import { AppProvider } from '@/hooks/useAppContext'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Theme } from '@radix-ui/themes'
+import './theme-config.css'
 import '@radix-ui/themes/styles.css'
-import store from '@/stores/store'
-import { Provider } from 'react-redux'
 
-const inter = Inter({ subsets: ['latin'], variable: '--default-color' })
 export const metadata = {
   title: `Sarkis' PortfolAI`,
   description:
@@ -21,7 +16,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <body>
         <ClerkProvider>
           <Theme radius="large" appearance="inherit">
-            <ReduxProvider>{children}</ReduxProvider>
+            <AppProvider>{children}</AppProvider>
           </Theme>
         </ClerkProvider>
       </body>

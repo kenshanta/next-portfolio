@@ -1,28 +1,40 @@
 'use client'
+import React from 'react'
 import { Button, TextField } from '@radix-ui/themes'
-import { useState } from 'react'
-import { UserButton } from '@clerk/nextjs'
-import { useSelector, useDispatch } from 'react-redux'
-import { increment, decrement } from '@/stores/slices/slices'
 import { PaperPlaneIcon } from '@radix-ui/react-icons'
-import BoxAnimation from '@/components/boxAnimation'
+import BoxAnimation from './boxAnimation'
+import { useAppContext } from '../hooks/useAppContext'
+import { analyze } from '@/utils/ai'
 
-const boxProps = {
-  color: 'orange',
-  duration: 1,
-  rotation: [0, 90, 90, 180, 0],
+const animateProps = {
+  scale: [1, 2, 2, 1, 1],
+  rotate: [0, 90, 90, 180, 0],
+  borderRadius: ['0%', '0%', '50%', '50%', '0%'],
 }
-
+const transitionProps = {
+  duration: 1,
+  ease: 'easeInOut',
+  times: [0, 0.2, 0.5, 0.8, 1],
+  repeat: 1,
+  repeatDelay: 0,
+}
 const TextInput = () => {
-  const dispatch = useDispatch()
-  // const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setMessage(e.target.value)
-  // }
+  const { userInput, setUserInput, setAiResponse } = useAppContext()
+  const [isEnabled, setIsEnabled] = React.useState(false)
 
+  const handleInputChange = (value: string) => {
+    setUserInput(value)
+  }
+  const handleSubmit = async () => {
+    setIsEnabled(true)
+    const response = await analyze(userInput)
+    setAiResponse(response)
+  }
   return (
     <TextField.Root>
       <TextField.Slot pl="2"></TextField.Slot>
       <TextField.Input
+        aria-label="yea"
         color="gray"
         radius="large"
         size="3"
@@ -30,14 +42,20 @@ const TextInput = () => {
         placeholder="How old is Sarkis?"
         type="text"
         style={{ height: '3rem' }}
+        onChange={(e) => handleInputChange(e.target.value)}
       />
-      <TextField.Slot pr="2">
+      <TextField.Slot pr="2" style={{ top: 0 }}>
         <Button
+          id="submit"
           variant="ghost"
           size={'2'}
-          onClick={() => dispatch(increment())}
+          onClick={() => handleSubmit()}
         >
-          <BoxAnimation props={boxProps}>
+          <BoxAnimation
+            isEnabled={isEnabled}
+            transitionProps={transitionProps}
+            animateProps={animateProps}
+          >
             <PaperPlaneIcon />
           </BoxAnimation>
         </Button>

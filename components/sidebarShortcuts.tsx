@@ -1,5 +1,5 @@
 'use client'
-
+import React from 'react'
 import { Flex, Heading, Text, Link } from '@radix-ui/themes'
 import {
   GitHubLogoIcon,
@@ -7,33 +7,41 @@ import {
   InstagramLogoIcon,
   StackIcon,
 } from '@radix-ui/react-icons'
+
+import Image from 'next/image'
+
+import GithubIcon from '../public/github-icon.svg'
+import LinkedInIcon from '../public/linkedin-svg.svg'
+import InstagramIcon from '../public/instagram-icon.svg'
+import StackOverflowIcon from '../public/stack-icon.svg'
+
 const SideBarShortcuts = () => {
   return (
-    <Flex direction={'column'} justify={'between'} p={'5'} pb={'3'}>
-      <Flex direction={'column'} gap={'3'} mb={'2'}>
-        <Heading color="gray" size="6" weight={'medium'}>
+    <Flex gap={'3'} direction={'column'} justify={'between'} p={'5'} pb={'3'}>
+      <Flex direction={'column'} gap={'3'} mb={'4'}>
+        <Heading size="6" weight={'medium'}>
           Sarkis K.
         </Heading>
-        <Heading size="8" weight={'medium'}>
+        <Heading className="jobTitleHeading" size="8" weight={'medium'}>
           Full Stack Engineer
         </Heading>
       </Flex>
-      <Flex gap={'7'} direction={'column-reverse'} grow={'1'}>
+      <Flex gap={'9'} direction={'column-reverse'} grow={'1'}>
         <Flex gap={'3'}>
           <Link>
-            <LinkedInLogoIcon />
+            <Image alt="linkedIn" src={LinkedInIcon} />
           </Link>
           <Link>
-            <GitHubLogoIcon />
+            <Image alt="github" src={GithubIcon} />
           </Link>
           <Link>
-            <StackIcon />
+            <Image alt="stackOverflow" src={StackOverflowIcon} />
           </Link>
           <Link>
-            <InstagramLogoIcon />
+            <Image alt="insta" src={InstagramIcon} />
           </Link>
         </Flex>
-        <Flex direction={'column'} gap={'3'}>
+        <Flex direction={'column'} gap={'1'}>
           <Text>Chat With sarkAI</Text>
           <Text>Projects</Text>
           <Text>Work 1</Text>

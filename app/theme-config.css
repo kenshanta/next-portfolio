@@ -1,21 +1,26 @@
 .radix-themes {
   background-color: #f2f2f2;
-  --default-color: 'Inter', #d96d39;
-  --default-secondary-color: gainsboro;
+  --default-color: #d96d39;
+  --default-secondary-color: #7a716c;
   --default-font-size: 18px;
 }
 
-#__next {
-  padding: 1rem;
-  margin: 0;
-  height: 100vh;
+._parent {
+  height: 99vh;
+  padding-bottom: 0;
+  color: var(--default-secondary-color);
 }
 
 .response-body {
   background-color: white;
   color: var(--default-secondary-color);
 }
-
+.jobTitleHeading {
+  color: var(--default-color);
+}
+html,
 body {
+  height: 100vh;
   margin: 0;
+  background-color: #f2f2f2 !important;
 }
