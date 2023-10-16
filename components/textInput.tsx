@@ -48,18 +48,18 @@ const TextInput = () => {
         radius="large"
         size="3"
         variant="soft"
-        placeholder="How old is Sarkis?"
+        placeholder="i.e How old is Sarkis?"
         type="text"
-        style={{ height: '3rem', maxWidth: '50rem' }}
+        style={{ height: '3rem' }}
         onChange={(e) => handleInputChange(e.target.value)}
       />
-      <TextField.Slot pr="2" style={{ top: 0 }}>
+      <TextField.Slot pr="4" style={{ top: 0 }}>
         <Button
           id="submit"
           variant="ghost"
           size={'2'}
           onClick={() => handleSubmit()}
-          disabled={userInput.length === 0}
+          disabled={true}
         >
           <BoxAnimation
             isEnabled={isEnabled}

@@ -36,57 +36,47 @@ const Home = () => {
   )
 }
 
-// const dekstopViewLayout = () => {
-//   return (
-//     <Flex direction={'row'} gap={'4'} p={'5'} width={'100%'} height={'100%'}>
-//       <SideBarShortcuts />
-//       <Flex
-//         direction={'column'}
-//         // justify={'between'}
-//         style={{ borderRadius: '2%' }}
-//         // pt={'4'}
-//         // p={'3'}
-//         height={'100%'}
-//         className="response-body"
-//       >
-//         <ResponseBody />
-//         <TextInput />
-//       </Flex>
-//     </Flex>
-//   )
-// }
-
 const mobileViewLayout = (isMobile: boolean) => {
   return (
     <Flex
       direction={isMobile ? 'column' : 'row'}
-      gap={'4'}
+      gap={isMobile ? '4' : '9'}
       p={isMobile ? '0' : '5'}
       width={'100%'}
       height={'100%'}
     >
       <SideBarShortcuts />
-      {/* <MobileHandleBar> */}
-      <Flex
-        className="response-body"
-        direction={'column'}
-        justify={'between'}
-        style={{ borderRadius: '2%' }}
-        pt={'4'}
-        // pr={'5'}
-        height={'100%'}
-      >
-        <ResponseBody />
-        <TextInput />
-      </Flex>
-      {/* </MobileHandleBar> */}
+      {isMobile ? (
+        <MobileHandleBar>
+          <Flex
+            className="response-body"
+            direction={'column'}
+            justify={'between'}
+            style={{ borderRadius: '2%' }}
+            pt={'4'}
+            // pr={'5'}
+            height={'100%'}
+          >
+            <ResponseBody />
+            <TextInput />
+          </Flex>
+        </MobileHandleBar> //TODO: should be proper + adjustable
+      ) : (
+        <Flex
+          className="response-body"
+          direction={'column'}
+          justify={'between'}
+          style={{ borderRadius: '2%' }}
+          pt={'4'}
+          height={'100%'}
+          grow={'1'}
+        >
+          <ResponseBody />
+          <TextInput />
+        </Flex>
+      )}
     </Flex>
   )
 }
 
-const windowWidthCalculator = () => {
-  if (window !== undefined) {
-    return window.matchMedia('(max-width: 600px)').matches
-  }
-}
 export default Home

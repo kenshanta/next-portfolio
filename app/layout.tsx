@@ -5,7 +5,7 @@ import './theme-config.css'
 import '@radix-ui/themes/styles.css'
 
 export const metadata = {
-  title: `Sarkis' PortfolAI`,
+  title: `Sarkis Kovlekjian`,
   description:
     'The following site is an AI integrated portfolio that answers your questions',
 }

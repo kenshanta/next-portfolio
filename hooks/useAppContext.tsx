@@ -37,7 +37,7 @@ export const AppProvider = ({ children }: any) => {
   )
   const [aiResponse, setAiResponse] = useState<IAIResponseContext[]>([
     {
-      content: `Hey! Im currently under construction, all the services will be provided shortly before end of 2023 :)`,
+      content: `Im still under construction, consider checking out the links for now :)`,
     },
   ])
 

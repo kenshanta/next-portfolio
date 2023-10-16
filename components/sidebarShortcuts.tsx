@@ -1,12 +1,13 @@
 'use client'
 import React from 'react'
-import { Flex, Heading, Text, Link } from '@radix-ui/themes'
+import { Flex, Heading, Text, Link, Code } from '@radix-ui/themes'
 import Image from 'next/image'
 
 import GithubIcon from '../public/github-icon.svg'
 import LinkedInIcon from '../public/linkedin-svg.svg'
 import InstagramIcon from '../public/instagram-icon.svg'
 import StackOverflowIcon from '../public/stack-icon.svg'
+import CodeIcon from '../public/code-icon.svg'
 
 const SideBarShortcuts = () => {
   return (
@@ -21,17 +22,26 @@ const SideBarShortcuts = () => {
       </Flex>
       <Flex gap={'9'} direction={'column-reverse'} grow={'1'}>
         <Flex gap={'3'}>
-          <Link>
+          <Link
+            target="_blank"
+            href="https://www.linkedin.com/in/sarkis-kovlekjian/"
+          >
             <Image alt="linkedIn" src={LinkedInIcon} />
           </Link>
-          <Link>
+          <Link target="_blank" href="https://github.com/kenshanta">
             <Image alt="github" src={GithubIcon} />
           </Link>
-          <Link>
+          <Link
+            target="_blank"
+            href="https://stackoverflow.com/users/10978433/sarkis"
+          >
             <Image alt="stackOverflow" src={StackOverflowIcon} />
           </Link>
-          <Link>
+          <Link target="_blank" href="https://www.instagram.com/kovlekjian/">
             <Image alt="insta" src={InstagramIcon} />
+          </Link>
+          <Link target="_blank" href="https://leetcode.com/kenshanta/">
+            <Image alt="leetcode" src={CodeIcon} />
           </Link>
         </Flex>
         <Flex direction={'column'} gap={'1'}>
