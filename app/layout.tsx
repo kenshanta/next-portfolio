@@ -5,7 +5,8 @@ import './theme-config.css'
 import '@radix-ui/themes/styles.css'
 
 export const metadata = {
-  title: `Sarkis Kovlekjian`,
+  title: `kovlekjian`,
+  name: 'kovlekjian',
   description:
     'The following site is an AI integrated portfolio that answers your questions',
 }
@@ -13,13 +14,18 @@ export const metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <ClerkProvider>
+      <title>Sarkis Kovlekjian</title>
+      <meta
+        name="kovlekjian"
+        content="A turbo-chatgpt-3.5 backed; customized with personal answers related to the field of question and it's legitimacy to my professional career. Still under construction"
+      ></meta>
+      <ClerkProvider>
+        <body>
           <Theme radius="large" appearance="inherit">
             <AppProvider>{children}</AppProvider>
           </Theme>
-        </ClerkProvider>
-      </body>
+        </body>
+      </ClerkProvider>
     </html>
   )
 }

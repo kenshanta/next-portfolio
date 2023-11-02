@@ -1,8 +1,9 @@
 'use client'
-import { UserButton } from '@clerk/nextjs'
+import ProfilePic from '@/components/profilePic'
 import PageAnimation from './pageAnimation'
 import { Flex, TextField } from '@radix-ui/themes'
 import { useAppContext } from '../hooks/useAppContext'
+import ProfileImg from '@/public/profile-pic-2.svg'
 
 export const ResponseBody: React.FC = () => {
   const { aiResponse, isMobile } = useAppContext()
@@ -26,10 +27,11 @@ export const ResponseBody: React.FC = () => {
               zIndex: '10',
             }}
           >
-            <UserButton />
+            <ProfilePic image={ProfileImg} />
           </TextField.Slot>
           <TextField.Slot
             pl={isMobile ? '5' : '6'}
+            py={'1'}
             style={{
               backgroundColor: '#FEFAF7',
               borderRadius: '.5rem',

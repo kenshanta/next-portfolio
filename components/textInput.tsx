@@ -43,6 +43,7 @@ const TextInput = () => {
     >
       <TextField.Slot pl="2"></TextField.Slot>
       <TextField.Input
+        disabled
         aria-label="yea"
         color="gray"
         radius="large"
