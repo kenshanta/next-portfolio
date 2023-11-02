@@ -4,7 +4,6 @@ import { Button, TextField } from '@radix-ui/themes'
 import PaperPlaneIcon from '../public/paper-plane-icon.svg'
 import BoxAnimation from './boxAnimation'
 import { useAppContext } from '../hooks/useAppContext'
-import { analyze } from '@/utils/ai'
 import Image from 'next/image'
 
 const animateProps = {
