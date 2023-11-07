@@ -74,7 +74,6 @@ const mobileViewLayout = (isMobileView: boolean | undefined) => {
           grow={'1'}
         >
           <ResponseBody />
-          {/* <ArrowPointer /> */}
           <TextInput />
         </Flex>
       )}

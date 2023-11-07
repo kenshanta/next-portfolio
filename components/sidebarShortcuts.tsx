@@ -8,7 +8,7 @@ import LinkedInIcon from '../public/linkedin-svg.svg'
 import InstagramIcon from '../public/instagram-icon.svg'
 import StackOverflowIcon from '../public/stack-icon.svg'
 import CodeIcon from '../public/code-icon.svg'
-
+import { motion } from 'framer-motion'
 const SideBarShortcuts = () => {
   return (
     <Flex gap={'3'} direction={'column'} justify={'between'} p={'5'} pb={'3'}>
@@ -26,22 +26,97 @@ const SideBarShortcuts = () => {
             target="_blank"
             href="https://www.linkedin.com/in/sarkis-kovlekjian/"
           >
-            <Image alt="linkedIn" src={LinkedInIcon} />
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1.2, 1, 1],
+                rotate: [0, 90, 180, 360, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                times: [0, 0.3, 0.6, 0.8, 1],
+                repeat: 5,
+                repeatDelay: 2,
+              }}
+            >
+              <Image alt="linkedIn" src={LinkedInIcon} />
+            </motion.div>
           </Link>
           <Link target="_blank" href="https://github.com/kenshanta">
-            <Image alt="github" src={GithubIcon} />
+            <motion.div
+              animate={{
+                scale: [1, 1, 1, 1, 1],
+                rotate: [0, 45, 90, -180, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                times: [0, 0.3, 0.6, 0.8, 1],
+                repeat: 5,
+                repeatDelay: 2,
+              }}
+            >
+              <Image alt="github" src={GithubIcon} />
+            </motion.div>
           </Link>
           <Link
             target="_blank"
             href="https://stackoverflow.com/users/10978433/sarkis"
           >
-            <Image alt="stackOverflow" src={StackOverflowIcon} />
+            <motion.div
+              animate={{
+                scale: [1, 1, 1, 1, 1],
+                rotate: [0, 0, 0, 360, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                times: [0, 0.3, 0.6, 0.8, 1],
+                repeat: 5,
+                repeatDelay: 2,
+              }}
+            >
+              <Image alt="stackOverflow" src={StackOverflowIcon} />
+            </motion.div>
           </Link>
           <Link target="_blank" href="https://www.instagram.com/kovlekjian/">
-            <Image alt="insta" src={InstagramIcon} />
+            <motion.div
+              animate={{
+                scale: [1, 1, 1, 1, 1],
+                rotate: [0, -45, -90, -180, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                times: [0, 0.3, 0.6, 0.8, 1],
+                repeat: 5,
+                repeatDelay: 2,
+              }}
+            >
+              <Image alt="insta" src={InstagramIcon} />
+            </motion.div>
           </Link>
           <Link target="_blank" href="https://leetcode.com/kenshanta/">
-            <Image alt="leetcode" src={CodeIcon} />
+            <motion.div
+              animate={{
+                scale: [1, 1.4, 1.4, 1, 1],
+                rotate: [0, -90, -180, -360, 0],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                times: [0, 0.3, 0.6, 0.8, 1],
+                repeat: 5,
+                repeatDelay: 2,
+              }}
+            >
+              <Image alt="leetcode" src={CodeIcon} />
+            </motion.div>
           </Link>
         </Flex>
         <Flex direction={'column'} gap={'1'}>
