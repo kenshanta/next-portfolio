@@ -15,13 +15,13 @@ export const metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      {/* <Head> */}
+      {/* <Head>
       <title>Sarkis Kovlekjian&apos;s Portfolio</title>
       <meta
         name="kovlekjian"
         content="A turbo-chatgpt-3.5 backed, customized with personal answers. Still under construction"
       ></meta>
-      {/* </Head> */}
+      </Head> */}
 
       <ClerkProvider>
         <body>
