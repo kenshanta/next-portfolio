@@ -4,28 +4,28 @@ import { useLayoutEffect } from 'react'
 import UsageIndicator from '@/components/progressIndicator'
 import TextInput from '@/components/textInput'
 import { ResponseBody } from '@/components/responseBody'
-import { useUser } from '@clerk/nextjs'
+// import { useUser } from '@clerk/nextjs'
 import SideBarShortcuts from '@/components/sidebarShortcuts'
 import { Flex, Box, Section } from '@radix-ui/themes'
 import { useAppContext } from '../hooks/useAppContext'
 
 const Home = () => {
-  const { isLoaded, isSignedIn, user } = useUser()
-  const { setSignedInUserData, setIsMobile } = useAppContext()
+  // const { isLoaded, isSignedIn, user } = useUser()
+  const { setIsMobile } = useAppContext()
   const isMobileView = window?.matchMedia('(max-width: 600px)').matches
 
   useLayoutEffect(() => {
     const handleWindowResize = () => {
       setIsMobile(window?.matchMedia('(max-width: 600px)').matches)
     }
-    if (isSignedIn) {
-      setSignedInUserData(user)
-    }
+    // if (isSignedIn) {
+    //   setSignedInUserData(user)
+    // }
     setIsMobile(window.matchMedia('(max-width: 650px)').matches)
     window?.addEventListener('resize', handleWindowResize)
-  }, [isSignedIn, user, setIsMobile, setSignedInUserData])
+  }, [setIsMobile])
 
-  return isLoaded ? (
+  return (
     <Section
       size={'1'}
       className="_parent h-full"
@@ -33,11 +33,6 @@ const Home = () => {
     >
       {mobileViewLayout(isMobileView)}
     </Section>
-  ) : (
-    <Box>
-      {' wait a bit'}
-      <UsageIndicator />
-    </Box>
   )
 }
 

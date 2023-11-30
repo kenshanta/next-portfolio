@@ -1,14 +1,15 @@
 'use client'
 import React, { createContext, useState, useContext } from 'react'
-import { useUser } from '@clerk/nextjs'
+// TODO: AUTH should be only when sending 1st API request
+// import { useUser } from '@clerk/nextjs'
 
 interface IStateContext {
   userInput: string
   setUserInput: React.Dispatch<React.SetStateAction<string>>
   aiResponse: IAIResponseContext[]
   setAiResponse: React.Dispatch<React.SetStateAction<IAIResponseContext[]>>
-  signedInUserData: any
-  setSignedInUserData: any
+  // signedInUserData: any
+  // setSignedInUserData: any
   isMobile: boolean | undefined
   setIsMobile: any
 }
@@ -22,16 +23,16 @@ const AppContext = createContext<IStateContext>({
   setUserInput: () => {},
   aiResponse: [{ content: 'Hey ${user} how can i help you today?' }],
   setAiResponse: () => {},
-  signedInUserData: {},
-  setSignedInUserData: () => {},
+  // signedInUserData: {},
+  // setSignedInUserData: () => {},
   isMobile: undefined,
   setIsMobile: () => {},
 })
 
 export const AppProvider = ({ children }: any) => {
   const [userInput, setUserInput] = useState('')
-  const { isLoaded, isSignedIn, user } = useUser()
-  const [signedInUserData, setSignedInUserData] = useState<any>(user)
+  // const { isLoaded, isSignedIn, user } = useUser()
+  // const [signedInUserData, setSignedInUserData] = useState<any>(user)
   const [isMobile, setIsMobile] = useState<boolean | undefined>()
   const [aiResponse, setAiResponse] = useState<IAIResponseContext[]>([
     {
@@ -45,8 +46,8 @@ export const AppProvider = ({ children }: any) => {
     setUserInput,
     aiResponse,
     setAiResponse,
-    setSignedInUserData,
-    signedInUserData,
+    // setSignedInUserData,
+    // signedInUserData,
     setIsMobile,
     isMobile,
   }
