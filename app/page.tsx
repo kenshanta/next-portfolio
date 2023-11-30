@@ -1,6 +1,6 @@
 'use client'
 
-import { useLayoutEffect } from 'react'
+import { useEffect } from 'react'
 import UsageIndicator from '@/components/progressIndicator'
 import TextInput from '@/components/textInput'
 import { ResponseBody } from '@/components/responseBody'
@@ -11,27 +11,19 @@ import { useAppContext } from '../hooks/useAppContext'
 
 const Home = () => {
   // const { isLoaded, isSignedIn, user } = useUser()
-  const { setIsMobile } = useAppContext()
-  const isMobileView = window?.matchMedia('(max-width: 600px)').matches
+  const { setIsMobile, isMobile } = useAppContext()
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleWindowResize = () => {
       setIsMobile(window?.matchMedia('(max-width: 600px)').matches)
     }
-    // if (isSignedIn) {
-    //   setSignedInUserData(user)
-    // }
-    setIsMobile(window.matchMedia('(max-width: 650px)').matches)
+    setIsMobile(window?.matchMedia('(max-width: 650px)').matches)
     window?.addEventListener('resize', handleWindowResize)
   }, [setIsMobile])
 
   return (
-    <Section
-      size={'1'}
-      className="_parent h-full"
-      pb={isMobileView ? '0' : '5'}
-    >
-      {mobileViewLayout(isMobileView)}
+    <Section size={'1'} className="_parent h-full" pb={isMobile ? '0' : '5'}>
+      {mobileViewLayout(isMobile)}
     </Section>
   )
 }
