@@ -9,6 +9,7 @@ import { Analytics } from '@vercel/analytics/react'
 export const metadata = {
   title: `Sarkis Kovlekjian's Portfolio`,
   name: 'Sarkis Kovlekjian',
+  icon: { icons: '/profile-pic-2.svg' },
   description:
     'A turbo-chatgpt-3.5 backed, customized with personal answers that is still under construction',
 }
