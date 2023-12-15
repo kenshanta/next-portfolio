@@ -8,9 +8,9 @@ import { Analytics } from '@vercel/analytics/react'
 
 export const metadata = {
   title: `Sarkis Kovlekjian's Portfolio`,
-  name: 'Kovlekjian',
+  name: 'Sarkis Kovlekjian',
   description:
-    'A turbo-chatgpt-3.5 backed, customized with personal answers. Still under construction',
+    'A turbo-chatgpt-3.5 backed, customized with personal answers that is still under construction',
 }
 
 function RootLayout({ children }: { children: React.ReactNode }) {
