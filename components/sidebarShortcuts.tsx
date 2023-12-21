@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Flex, Heading, Text, Link, Code } from '@radix-ui/themes'
+import { Flex, Heading, Text, Link } from '@radix-ui/themes'
 import Image from 'next/image'
 
 import GithubIcon from '../public/github-icon.svg'
@@ -8,7 +8,9 @@ import LinkedInIcon from '../public/linkedin-svg.svg'
 import InstagramIcon from '../public/instagram-icon.svg'
 import StackOverflowIcon from '../public/stack-icon.svg'
 import CodeIcon from '../public/code-icon.svg'
+import ProfileIcon from '../public/profile.svg'
 import { motion } from 'framer-motion'
+
 const SideBarShortcuts = () => {
   return (
     <Flex gap={'3'} direction={'column'} justify={'between'} p={'5'} pb={'3'}>
@@ -116,6 +118,27 @@ const SideBarShortcuts = () => {
               }}
             >
               <Image alt="leetcode" src={CodeIcon} />
+            </motion.div>
+          </Link>
+          <Link
+            target="_blank"
+            href="https://drive.google.com/file/d/1KHslByPGqQVf_jYXTLjo0EXkW36Rw5LK/view?usp=drive_link"
+          >
+            <motion.div
+              animate={{
+                scale: [1, 0.5, 1.5, 1, 1],
+                rotate: [0, 90, 180, 270, 360],
+                borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+              }}
+              transition={{
+                duration: 4,
+                ease: 'easeInOut',
+                times: [0, 0.3, 0.6, 0.8, 1],
+                repeat: 5,
+                repeatDelay: 2,
+              }}
+            >
+              <Image alt="stackOverflow" src={ProfileIcon} />
             </motion.div>
           </Link>
         </Flex>
