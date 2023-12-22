@@ -1,69 +1,66 @@
 'use client'
 
-import { useEffect } from 'react'
-import UsageIndicator from '@/components/progressIndicator'
+import { useLayoutEffect, useState } from 'react'
 import TextInput from '@/components/textInput'
 import { ResponseBody } from '@/components/responseBody'
-// import { useUser } from '@clerk/nextjs'
+import { useMediaQuery } from 'react-responsive'
 import SideBarShortcuts from '@/components/sidebarShortcuts'
-import { Flex, Box, Section } from '@radix-ui/themes'
-import { useAppContext } from '../hooks/useAppContext'
+import { Flex, Section } from '@radix-ui/themes'
 
 const Home = () => {
-  // const { isLoaded, isSignedIn, user } = useUser()
-  const { setIsMobile, isMobile } = useAppContext()
+  const [isMounted, setIsMounted] = useState(false)
 
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setIsMobile(window?.matchMedia('(max-width: 600px)').matches)
-    }
-    setIsMobile(window?.matchMedia('(max-width: 650px)').matches)
-    window?.addEventListener('resize', handleWindowResize)
-  }, [setIsMobile])
+  useLayoutEffect(() => {
+    setIsMounted(true)
+  }, [isMounted])
 
-  return (
-    <Section size={'1'} className="_parent h-full" pb={isMobile ? '0' : '5'}>
-      {mobileViewLayout(isMobile)}
+  return isMounted ? (
+    <Section size={'1'} className="_parent" pb={'0'}>
+      <Desktop>{desktopViewLayout(false)}</Desktop>
+      <Mobile>{desktopViewLayout(true)}</Mobile>
     </Section>
-  )
+  ) : null
 }
 
-const mobileViewLayout = (isMobileView: boolean | undefined) => {
+const Desktop = ({ children }: any) => {
+  const useDestopMediaQuery = () => {
+    return useMediaQuery({
+      minWidth: 600,
+    })
+  }
+  return useDestopMediaQuery() ? children : null
+}
+
+const Mobile = ({ children }: any) => {
+  const useMobileMediaQuery = () => {
+    return useMediaQuery({
+      maxWidth: 600,
+    })
+  }
+  return useMobileMediaQuery() ? children : null
+}
+
+const desktopViewLayout = (isMobile: boolean) => {
   return (
     <Flex
-      direction={isMobileView ? 'column' : 'row'}
-      gap={isMobileView ? '4' : '9'}
-      p={isMobileView ? '0' : '5'}
-      width={'100%'}
+      direction={isMobile ? 'column' : 'row'}
+      gap={isMobile ? '4' : '9'}
+      p={isMobile ? '0' : '5'}
       height={'100%'}
     >
       <SideBarShortcuts />
-      {isMobileView ? (
-        <Flex
-          className="response-body"
-          direction={'column'}
-          justify={'between'}
-          style={{ borderRadius: '2%' }}
-          pt={'4'}
-          height={'100%'}
-        >
-          <ResponseBody />
-          <TextInput />
-        </Flex>
-      ) : (
-        <Flex
-          className="response-body"
-          direction={'column'}
-          justify={'between'}
-          style={{ borderRadius: '2%' }}
-          pt={'4'}
-          height={'100%'}
-          grow={'1'}
-        >
-          <ResponseBody />
-          <TextInput />
-        </Flex>
-      )}
+      <Flex
+        className="response-body"
+        direction={'column'}
+        justify={'between'}
+        style={{ borderRadius: '2%' }}
+        pt={'4'}
+        grow={'1'}
+        width={'100%'}
+      >
+        <ResponseBody />
+        <TextInput />
+      </Flex>
     </Flex>
   )
 }

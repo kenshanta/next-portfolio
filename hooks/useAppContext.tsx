@@ -1,5 +1,6 @@
 'use client'
 import React, { createContext, useState, useContext } from 'react'
+import { useMediaQuery } from 'react-responsive'
 // TODO: AUTH should be only when sending 1st API request
 // import { useUser } from '@clerk/nextjs'
 
@@ -8,8 +9,6 @@ interface IStateContext {
   setUserInput: React.Dispatch<React.SetStateAction<string>>
   aiResponse: IAIResponseContext[]
   setAiResponse: React.Dispatch<React.SetStateAction<IAIResponseContext[]>>
-  // signedInUserData: any
-  // setSignedInUserData: any
   isMobile: boolean | undefined
   setIsMobile: any
 }
@@ -23,31 +22,35 @@ const AppContext = createContext<IStateContext>({
   setUserInput: () => {},
   aiResponse: [{ content: 'Hey ${user} how can i help you today?' }],
   setAiResponse: () => {},
-  // signedInUserData: {},
-  // setSignedInUserData: () => {},
   isMobile: undefined,
   setIsMobile: () => {},
 })
 
 export const AppProvider = ({ children }: any) => {
   const [userInput, setUserInput] = useState('')
-  // const { isLoaded, isSignedIn, user } = useUser()
-  // const [signedInUserData, setSignedInUserData] = useState<any>(user)
-  const [isMobile, setIsMobile] = useState<boolean | undefined>()
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(
+    useMediaQuery({
+      maxWidth: 600,
+    })
+  )
   const [aiResponse, setAiResponse] = useState<IAIResponseContext[]>([
     {
-      content: `I'm still under construction, consider checking out the Icon links :)`,
+      content: `I'm still under construction, consider checking out the Icon links ${
+        useMediaQuery({
+          maxWidth: 600,
+        })
+          ? 'above'
+          : 'below'
+      } :)`,
     },
   ])
 
-  // Define any other functions or values you want to provide
+  // Define any other functions or values if needed
   const value = {
     userInput,
     setUserInput,
     aiResponse,
     setAiResponse,
-    // setSignedInUserData,
-    // signedInUserData,
     setIsMobile,
     isMobile,
   }

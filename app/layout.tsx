@@ -1,6 +1,4 @@
 import { AppProvider } from '@/hooks/useAppContext'
-//TODO: usage should be when sending chat request
-import { ClerkProvider } from '@clerk/nextjs'
 import { Theme } from '@radix-ui/themes'
 import './theme-config.css'
 import '@radix-ui/themes/styles.css'
@@ -17,14 +15,12 @@ export const metadata = {
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      {/* <ClerkProvider> */}
       <body>
         <Theme radius="large" appearance="inherit">
           <AppProvider>{children}</AppProvider>
         </Theme>
         <Analytics />
       </body>
-      {/* </ClerkProvider> */}
     </html>
   )
 }

@@ -1,46 +1,50 @@
 'use client'
 import ProfilePic from '@/components/profilePic'
 import PageAnimation from './pageAnimation'
-import { Flex, TextField } from '@radix-ui/themes'
+import { Flex, TextField, Box } from '@radix-ui/themes'
 import { useAppContext } from '../hooks/useAppContext'
 import ProfileImg from '@/public/profile-pic-2.svg'
+import Typewriter from 'typewriter-effect'
 
 export const ResponseBody: React.FC = () => {
   const { aiResponse, isMobile } = useAppContext()
 
   return (
-    <Flex pt={'6'} pl={'1'} pr={isMobile ? '7' : '9'}>
+    <Flex pt={'6'} pl={'1'} pr={'5'}>
       <PageAnimation>
-        <TextField.Root
-          style={{
-            display: 'flex',
-            justifyContent: 'start',
-            height: '100%',
-          }}
-        >
+        <TextField.Root style={{ height: '100%', width: '100%' }}>
           <TextField.Slot
-            pl="2"
+            pl="4"
             pr="0"
             style={{
               left: '3%',
-              top: '-50%',
-              zIndex: '10',
+              bottom: '50%',
+              zIndex: 10,
+              position: 'relative',
             }}
           >
             <ProfilePic image={ProfileImg} />
           </TextField.Slot>
-          <TextField.Slot
+          <Box
             pl={isMobile ? '5' : '6'}
             py={'1'}
+            pr={'3'}
             style={{
               backgroundColor: '#FEFAF7',
               borderRadius: '.5rem',
-              maxWidth: '83%',
-              height: 'auto',
             }}
           >
-            {aiResponse.map((chat: any) => chat.content)}
-          </TextField.Slot>
+            {aiResponse.map((chat: any, i: number) => {
+              return (
+                <Typewriter
+                  key={i}
+                  onInit={(typewriter) => {
+                    typewriter.changeDelay(25).typeString(chat.content).start()
+                  }}
+                />
+              )
+            })}
+          </Box>
         </TextField.Root>
       </PageAnimation>
     </Flex>

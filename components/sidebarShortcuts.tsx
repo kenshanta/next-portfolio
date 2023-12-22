@@ -146,10 +146,6 @@ const SideBarShortcuts = () => {
           <Text style={{ textDecoration: 'underline', color: '#d96d39' }}>
             Chat With sarkAI
           </Text>
-          <Text>Projects</Text>
-          <Text>Work 1</Text>
-          <Text>About</Text>
-          <Text>Contact</Text>
         </Flex>
       </Flex>
     </Flex>

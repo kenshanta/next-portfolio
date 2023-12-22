@@ -37,9 +37,11 @@
     "react-collapse-pane": "^3.0.1",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",
+    "react-responsive": "^9.0.2",
     "suncalc": "^1.9.0",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.5",
@@ -50,7 +52,6 @@
     "@storybook/jest": "^0.2.2",
     "@storybook/nextjs": "^7.4.5",
     "@storybook/react": "^7.4.5",
-    "@storybook/test-runner": "^0.13.0",
     "@storybook/testing-library": "^0.2.1",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.1.2",
