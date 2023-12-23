@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 
-const PageAnimation = ({ children }: any) => {
+const PageAnimation = ({ children, delaySec }: any) => {
   return (
     <AnimatePresence>
       <motion.div
@@ -12,7 +12,7 @@ const PageAnimation = ({ children }: any) => {
           y: 0,
           x: 0,
         }}
-        transition={{ delay: 0.2 }}
+        transition={{ delay: delaySec }}
       >
         {children}
       </motion.div>

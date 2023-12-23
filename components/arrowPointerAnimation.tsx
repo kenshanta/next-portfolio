@@ -16,21 +16,10 @@ const ArrowPointer: React.FC<ArrowPointerProps> = ({ pointA, pointB }) => {
     return null
   }
 
-  const iconStyle = {
-    position: 'absolute',
-    left: 0,
-    top: 0,
-    width: 20,
-    height: 20,
-    transform: `translate(${pointB.x - pointA.x}px, ${pointB.y - pointA.y}px)`,
-  }
-
   return (
     <motion.div
       style={{
         position: 'absolute',
-        // left: 500,
-        // top: 500,
         background: 'yellow',
         width: 20,
         height: 20,

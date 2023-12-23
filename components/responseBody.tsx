@@ -11,7 +11,7 @@ export const ResponseBody: React.FC = () => {
 
   return (
     <Flex pt={'6'} pl={'1'} pr={'5'}>
-      <PageAnimation>
+      <PageAnimation delaySec={4.2}>
         <TextField.Root style={{ height: '100%', width: '100%' }}>
           <TextField.Slot
             pl="4"
@@ -20,7 +20,6 @@ export const ResponseBody: React.FC = () => {
               left: '3%',
               bottom: '50%',
               zIndex: 10,
-              position: 'relative',
             }}
           >
             <ProfilePic image={ProfileImg} />
@@ -37,9 +36,16 @@ export const ResponseBody: React.FC = () => {
             {aiResponse.map((chat: any, i: number) => {
               return (
                 <Typewriter
+                  options={{
+                    cursor: '',
+                  }}
                   key={i}
                   onInit={(typewriter) => {
-                    typewriter.changeDelay(25).typeString(chat.content).start()
+                    typewriter
+                      .pauseFor(4200)
+                      .changeDelay(25)
+                      .typeString(chat.content)
+                      .start()
                   }}
                 />
               )

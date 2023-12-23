@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Flex, Heading, Text, Link } from '@radix-ui/themes'
+import { Flex, Heading, Text, Link, Box } from '@radix-ui/themes'
 import Image from 'next/image'
 
 import GithubIcon from '../public/github-icon.svg'
@@ -10,16 +10,50 @@ import StackOverflowIcon from '../public/stack-icon.svg'
 import CodeIcon from '../public/code-icon.svg'
 import ProfileIcon from '../public/profile.svg'
 import { motion } from 'framer-motion'
+import Typewriter from 'typewriter-effect'
 
 const SideBarShortcuts = () => {
   return (
-    <Flex gap={'3'} direction={'column'} justify={'between'} p={'5'} pb={'3'}>
-      <Flex direction={'column'} gap={'3'} mb={'4'}>
-        <Heading size="6" weight={'medium'}>
-          Sarkis K.
+    <Flex
+      gap={'6'}
+      direction={'column'}
+      justify={'between'}
+      p={'5'}
+      pb={'3'}
+      width={'min-content'}
+    >
+      <Flex width={'100%'} direction={'column'} gap={'3'} mb={'4'}>
+        <Heading className="d-flex justify-center" size="6" weight={'medium'}>
+          Sarkis Kovlekjian
+          <Typewriter
+            options={{
+              cursor: '',
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .changeDelay(75)
+                .typeString('is a ... 🎶 🥁🥁🥁 🎶')
+                .start()
+                .pauseFor(100)
+                .changeDeleteSpeed(50)
+                .deleteAll()
+            }}
+          />
         </Heading>
+
         <Heading className="jobTitleHeading" size="8" weight={'medium'}>
-          Full Stack Engineer
+          <Typewriter
+            options={{
+              cursor: '',
+            }}
+            onInit={(typewriter) => {
+              typewriter
+                .changeDelay(75)
+                .pauseFor(2000)
+                .typeString('Full Stack Engineer')
+                .start()
+            }}
+          />
         </Heading>
       </Flex>
       <Flex gap={'9'} direction={'column-reverse'} grow={'1'}>
@@ -40,6 +74,7 @@ const SideBarShortcuts = () => {
                 times: [0, 0.3, 0.6, 0.8, 1],
                 repeat: 5,
                 repeatDelay: 2,
+                delay: 8,
               }}
             >
               <Image alt="linkedIn" src={LinkedInIcon} />
@@ -58,6 +93,7 @@ const SideBarShortcuts = () => {
                 times: [0, 0.3, 0.6, 0.8, 1],
                 repeat: 5,
                 repeatDelay: 2,
+                delay: 10,
               }}
             >
               <Image alt="github" src={GithubIcon} />
@@ -79,6 +115,7 @@ const SideBarShortcuts = () => {
                 times: [0, 0.3, 0.6, 0.8, 1],
                 repeat: 5,
                 repeatDelay: 2,
+                delay: 9,
               }}
             >
               <Image alt="stackOverflow" src={StackOverflowIcon} />
@@ -97,6 +134,7 @@ const SideBarShortcuts = () => {
                 times: [0, 0.3, 0.6, 0.8, 1],
                 repeat: 5,
                 repeatDelay: 2,
+                delay: 8,
               }}
             >
               <Image alt="insta" src={InstagramIcon} />
@@ -115,6 +153,7 @@ const SideBarShortcuts = () => {
                 times: [0, 0.3, 0.6, 0.8, 1],
                 repeat: 5,
                 repeatDelay: 2,
+                delay: 7.5,
               }}
             >
               <Image alt="leetcode" src={CodeIcon} />
@@ -136,6 +175,7 @@ const SideBarShortcuts = () => {
                 times: [0, 0.3, 0.6, 0.8, 1],
                 repeat: 5,
                 repeatDelay: 2,
+                delay: 7.5,
               }}
             >
               <Image alt="stackOverflow" src={ProfileIcon} />
