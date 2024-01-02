@@ -9,7 +9,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.23.5",
@@ -34,6 +35,7 @@
     "langchain": "^0.0.150",
     "next": "^13.5.2",
     "next-images": "^1.8.5",
+    "patch-package": "^8.0.0",
     "react": "^18.2.0",
     "react-collapse-pane": "^3.0.1",
     "react-dom": "^18.2.0",

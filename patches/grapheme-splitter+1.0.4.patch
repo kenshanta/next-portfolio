@@ -1,0 +1,13 @@
+diff --git a/node_modules/grapheme-splitter/index.d.ts b/node_modules/grapheme-splitter/index.d.ts
+index 61162ac..429b4a8 100644
+--- a/node_modules/grapheme-splitter/index.d.ts
++++ b/node_modules/grapheme-splitter/index.d.ts
+@@ -16,7 +16,7 @@ declare class GraphemeSplitter {
+   /** iterate the string to an iterable iterator of grapheme clusters */
+   iterateGraphemes(s: string): IterableIterator<string>;
+   /** split the string to an array of grapheme clusters */
+-  splitGraphemes(s: string): string[];
++  splitGraphemes(s: string): string;
+   /** count the number of grapheme clusters in a string */
+   countGraphemes(s: string): number;
+ }
