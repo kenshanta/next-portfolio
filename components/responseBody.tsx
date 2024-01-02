@@ -5,13 +5,14 @@ import { Flex, TextField, Box } from '@radix-ui/themes'
 import { useAppContext } from '../hooks/useAppContext'
 import ProfileImg from '@/public/profile-pic-2.svg'
 import Typewriter from 'typewriter-effect'
+import StringSplitter from '@/utils/stringSplitter'
 
 export const ResponseBody: React.FC = () => {
   const { aiResponse, isMobile } = useAppContext()
 
   return (
     <Flex pt={'6'} pl={'1'} pr={'5'}>
-      <PageAnimation delaySec={4.2}>
+      <PageAnimation delaySec={4.5}>
         <TextField.Root style={{ height: '100%', width: '100%' }}>
           <TextField.Slot
             pl="4"
@@ -19,7 +20,6 @@ export const ResponseBody: React.FC = () => {
             style={{
               left: '3%',
               bottom: '50%',
-              zIndex: 10,
             }}
           >
             <ProfilePic image={ProfileImg} />
@@ -38,11 +38,12 @@ export const ResponseBody: React.FC = () => {
                 <Typewriter
                   options={{
                     cursor: '',
+                    stringSplitter: StringSplitter,
                   }}
                   key={i}
                   onInit={(typewriter) => {
                     typewriter
-                      .pauseFor(4200)
+                      .pauseFor(4500)
                       .changeDelay(25)
                       .typeString(chat.content)
                       .start()

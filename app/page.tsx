@@ -47,6 +47,7 @@ const desktopViewLayout = (isMobile: boolean) => {
       gap={isMobile ? '4' : '9'}
       p={isMobile ? '0' : '5'}
       height={'100%'}
+      width={'100%'}
     >
       <SideBarShortcuts />
       <Flex
