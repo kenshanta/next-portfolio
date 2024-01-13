@@ -21,6 +21,7 @@ const SideBarShortcuts = () => {
       direction={'column'}
       justify={'between'}
       p={'5'}
+      pr={'3'}
       pb={'3'}
       width={isMobile ? 'max-content' : 'min-content'}
     >
@@ -190,7 +191,7 @@ const SideBarShortcuts = () => {
         </Flex>
         <Flex direction={'column'} gap={'1'}>
           <Text style={{ textDecoration: 'underline', color: '#d96d39' }}>
-            Chat With sarkAI
+            Chat with sarkAI
           </Text>
         </Flex>
       </Flex>

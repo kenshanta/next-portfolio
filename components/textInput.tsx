@@ -61,13 +61,14 @@ const TextInput = () => {
           onClick={() => handleSubmit()}
           disabled={true}
         >
+          {/* TODO: Enable when AI features are enabled
           <BoxAnimation
             isEnabled={isEnabled}
             transitionProps={transitionProps}
             animateProps={animateProps}
-          >
-            <Image alt="paperPlane" src={PaperPlaneIcon} />
-          </BoxAnimation>
+          > */}
+          <Image alt="paperPlane" src={PaperPlaneIcon} />
+          {/* </BoxAnimation> */}
         </Button>
       </TextField.Slot>
     </TextField.Root>

@@ -20,6 +20,7 @@ body {
 .response-body {
   background-color: white;
   color: var(--default-secondary-color);
+  border-radius: 50%;
 }
 
 .jobTitleHeading {

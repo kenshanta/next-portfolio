@@ -35,7 +35,7 @@ export const AppProvider = ({ children }: any) => {
   )
   const [aiResponse, setAiResponse] = useState<IAIResponseContext[]>([
     {
-      content: `Features are unavailable & still under construction, to get to know more about me consider clicking the animated icons ${
+      content: `AI Features are unavailable & still under construction, to get to know more about me consider clicking the animated icons ${
         isMobile ? 'above' : 'below'
       } 🤓`,
     },
