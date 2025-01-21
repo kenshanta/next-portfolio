@@ -29,7 +29,7 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.48.0",
     "eslint-config-next": "^13.5.2",
-    "firebase": "^10.14.1",
+    "firebase": "^11.2.0",
     "framer-motion": "^10.16.4",
     "grapheme-splitter": "^1.0.4",
     "next": "^15.1.3",
